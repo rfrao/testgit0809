@@ -104,10 +104,40 @@
    - github是开源网站，可分享/提交源代码
 
 11.提交代码到github（当作git服务器来使用）
-   - git push [地址] master
+   - git push [地址] [分支名]
    - 地址示例：
     $ git push https://github.com/rfrao/testgit0809.git master
    - 会把当前分支的内容上传到远程的master分支上。
    - 提交到对应的分支上（master）
 
+
+12.从github下载代码到本地
+   - git pull [地址] [分支名]
+   - $ git pull  https://github.com/rfrao/testgit0809.git master
+   - 退出： Q
+   - 注意：本地要初始化一个仓库，git init
+
+   - 克隆，会得到远程仓库相同的数据，若多次执行，会覆盖本地内容。
+   git clone [地址]
+   - git clone https://github.com/rfrao/testgit0809.git
+
+13 SSH提交代码到gihub
+   - 这种方式不需要每次都输入用户名和密码，就能够验证上传者的身份
+   - 允许指定人员上传
+
+   - 公钥 私钥
+   - 二者之间有关联
+   - 生成公钥和私钥(私钥自己留着，公钥放在github网站，进行用户验证对比)
+   + 生成ssh密钥：
+     + 任意目录打开git bash 并输入：ssh -keygen -t rsa -C xm123.qq.com
+     + 打开c盘--用户--.ssh文件夹--id_rsa.pub--复制内容
+     + 打开gihub网站--个人--设置--SSH设置--创建SSH密钥--输入复制内容
+     + 在指定目录打开git bash,输入内容：
+     + git push [ssh地址] master
+     + 根据提示，输入yes,回车等待结果，看到done即表示成功。
+     + (前提是已经提交到本地，`git init`, ` git add ./`, `git commit -m "msg"`)
+     + 刷新github页面，查看上传内容。
+
+  
+14. 本体的新增内容
 
