@@ -6,6 +6,7 @@
 - 注意：如果忘记写 -m 会进入vim编辑器界面，此时按下esc :   q   回车
 - 强制退出： 【 esc  :   q! 】
 -  保存再退出：  【 esc : wq 】
+- Already up-to-date：本地代码版本库与服务器一致
 
 1.git安装：
   -官网：https://git-scm.com/downloads
@@ -140,7 +141,9 @@
      + (前提是已经提交到本地，`git init`, ` git add ./`, `git commit -m "msg"`)
      + 刷新github页面，查看上传内容。
 
-   - 模拟上传测试：
+ 
+
+ 14.模拟上传测试：
    - 情况1：
      + 首先，小明本地执行了代码修改，并push上传到github，
        而后，小红本地执行了代码修改，并从GitHub下载pull代码库，
@@ -156,4 +159,17 @@
                 还先解决冲突，再把最新的版本上传push到GitHub服务器。
  
 
- 14.
+ 15.SSH地址简写
+   - git remore add [变量名] [SSH地址]
+     + git remote add orange git@github.com:rfrao/testgit0809.git
+
+   - it push [变量名] master
+   - git pull [变量名] master
+
+   - 当我们在push时，加上 -u 参数，则在下一次push时只需要写 `git push`即可上传。
+     + git push [变量名] -u master
+     + git push 
+     + 原理：加上 [-u]参数后，git会将当前分支与远程指定分支进行关联。
+     + 注意：在不同仓库中，是不允许使用的，除非先pull下来。
+   
+   - Already up-to-date：本地代码版本库与服务器一致
